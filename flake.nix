@@ -15,7 +15,7 @@
         flake = pkgs.project.flake { };
       in
       flake // {
-        defaultPackage = flake.packages."portfolio-frontend:exe:portfolio-frontend";
+        defaultPackage = flake.packages."optics-operators:exe:readme";
       });
 
   nixConfig = {

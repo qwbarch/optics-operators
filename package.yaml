@@ -5,6 +5,14 @@ library:
   source-dirs:
     - src
 
+executables:
+  readme:
+    main: README.lhs
+    source-dirs:
+      - .
+      - src
+    ghc-options: -pgmL markdown-unlit
+
 tests:
   unit-test:
     main: Main.hs

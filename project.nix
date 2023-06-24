@@ -9,6 +9,7 @@ let
     ghc
     ghcid
     haskell-language-server
+    markdown-unlit
   ];
   crossPlatforms = p: with p; [ ghcjs ];
 in
@@ -21,7 +22,7 @@ final.haskell-nix.cabalProject' {
       if enableIndexing != "" && builtins.fromJSON enableIndexing
       then packages else _: [ ];
     withHoogle = true;
-    exactDeps = true;
+    exactDeps = false;
     inputsFrom = [{ inherit buildInputs; }];
     shellHook = ''
       export TASTY_COLOR=always
