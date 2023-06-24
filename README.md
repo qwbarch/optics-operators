@@ -1,6 +1,14 @@
 # optics-operators
 
-A tiny package containing operators missing from the official package.
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
+A tiny package containing operators missing from the official package
+
+## Why does this package exist?
+
+The [optics](https://hackage.haskell.org/package/optics) library is missing convenient operators that the [lens](https://hackage.haskell.org/package/lens-5.2.2/docs/Control-Lens-Operators.html)
+library provides.  
+I've only added the operators I need for now. Feel free to open an issue or pull request to add new ones.
 
 ## Quick start
 
@@ -44,10 +52,3 @@ main = print <=< flip execStateT person $ do
 
 -- Output: Person {age = 80}
 ```
-
-## Why does this package exist?
-
-The optics library is missing convenient operators that the [lens](https://hackage.haskell.org/package/lens-5.2.2/docs/Control-Lens-Operators.html)
-library provides.
-
-I've only added the operators I need for now. Feel free to open an issue or pull request to add new ones.
