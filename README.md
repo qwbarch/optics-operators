@@ -1,6 +1,6 @@
 # optics-operators
 
-[![build](https://github.com/qwbarch/optics-operators/actions/workflows/build.yml/badge.svg)](https://github.com/qwbarch/optics-operators/actions/workflows/build.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![build](https://github.com/qwbarch/optics-operators/actions/workflows/build.yml/badge.svg)](https://github.com/qwbarch/optics-operators/actions/workflows/build.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) [![Hackage](http://img.shields.io/hackage/v/optics-operators.svg)](https://hackage.haskell.org/package/optics-operators)
 
 A tiny package containing operators missing from the official package.
 
