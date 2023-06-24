@@ -1,0 +1,21 @@
+name: optics-operators
+version: 0.1.0.0
+
+library:
+  source-dirs:
+    - src
+
+ghc-options:
+  - -threaded
+  - -rtsopts
+  - -with-rtsopts=-N
+  - -O2
+  - -flate-specialise
+  - -fspecialise-aggressively
+  - -Wall
+  - -Wno-name-shadowing
+
+dependencies:
+  - base >= 4.10 && < 5
+  - optics-core >= 0.4 && < 1
+  - mtl >= 2 && < 3
