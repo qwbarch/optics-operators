@@ -6,6 +6,12 @@ cabal-version: 1.12
 
 name:           optics-operators
 version:        0.1.0.0
+synopsis:       A tiny package containing operators missing from the official package.
+description:    A tiny package containing operators missing from the official package.
+category:       Data, Optics, Lenses
+homepage:       https://github.com/qwbarch/optics-operators
+bug-reports:    https://github.com/qwbarch/optics-operators/issues
+maintainer:     qwbarch <qwbarch@gmail.com>
 license:        MIT
 license-file:   LICENSE
 build-type:     Simple

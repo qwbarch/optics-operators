@@ -2,7 +2,7 @@
 
 [![build](https://github.com/qwbarch/optics-operators/actions/workflows/build.yml/badge.svg)](https://github.com/qwbarch/optics-operators/actions/workflows/build.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-A tiny package containing operators missing from the official package
+A tiny package containing operators missing from the official package.
 
 ## Why does this package exist?
 

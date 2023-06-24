@@ -1,5 +1,13 @@
 name: optics-operators
 version: 0.1.0.0
+license: MIT
+license-file: LICENSE
+maintainer: qwbarch <qwbarch@gmail.com>
+category: Data, Optics, Lenses
+synopsis: A tiny package containing operators missing from the official package.
+description: A tiny package containing operators missing from the official package.
+homepage: https://github.com/qwbarch/optics-operators
+bug-reports: https://github.com/qwbarch/optics-operators/issues
 
 library:
   source-dirs:
