@@ -5,6 +5,16 @@ library:
   source-dirs:
     - src
 
+tests:
+  unit-test:
+    main: Main.hs
+    source-dirs:
+      - src
+      - test
+    dependencies:
+      - tasty
+      - tasty-quickcheck
+
 ghc-options:
   - -threaded
   - -rtsopts
