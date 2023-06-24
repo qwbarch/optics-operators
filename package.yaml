@@ -2,12 +2,26 @@ name: optics-operators
 version: 0.1.0.0
 license: MIT
 license-file: LICENSE
+author: qwbarch
 maintainer: qwbarch <qwbarch@gmail.com>
 category: Data, Optics, Lenses
-synopsis: A tiny package containing operators missing from the official package.
-description: A tiny package containing operators missing from the official package.
 homepage: https://github.com/qwbarch/optics-operators
 bug-reports: https://github.com/qwbarch/optics-operators/issues
+extra-doc-files: CHANGELOG.md
+
+synopsis: A tiny package containing operators missing from the official package.
+description: |
+  A tiny package containing operators missing from the official package.
+  Basic example using state operators:
+
+  > newtype Person = Person { age :: Int } deriving (Show, Generic)
+  > 
+  > main :: IO ()
+  > main = print <=< flip execStateT (Person 0) $ do
+  >   #age += 50
+  >   #age -= 20
+  >
+  > -- Output: Person {age = 30}
 
 library:
   source-dirs:
@@ -19,7 +33,15 @@ executables:
     source-dirs:
       - .
       - src
-    ghc-options: -pgmL markdown-unlit
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      - -flate-specialise
+      - -fspecialise-aggressively
+      - -Wall
+      - -Wno-name-shadowing
+      - -pgmL markdown-unlit
 
 tests:
   unit-test:
@@ -30,16 +52,14 @@ tests:
     dependencies:
       - tasty >= 1.4.3 && < 1.5
       - tasty-quickcheck >= 0.10.2 && < 0.11
-
-ghc-options:
-  - -threaded
-  - -rtsopts
-  - -with-rtsopts=-N
-  - -O2
-  - -flate-specialise
-  - -fspecialise-aggressively
-  - -Wall
-  - -Wno-name-shadowing
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      - -flate-specialise
+      - -fspecialise-aggressively
+      - -Wall
+      - -Wno-name-shadowing
 
 dependencies:
   - base >= 4.10 && < 5

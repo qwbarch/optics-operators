@@ -21,9 +21,8 @@ Necessary language extensions and imports for the example:
 ```haskell
 {-# LANGUAGE DeriveGeneric, OverloadedLabels #-}
 import GHC.Generics (Generic)
-import Control.Monad.State (StateT, execStateT)
+import Control.Monad.State (State, execState)
 import Data.Optics.Operators ((+=), (-=), (*=))
-import Control.Monad ((<=<))
 ```
 
 Basic example using state operators:
@@ -32,10 +31,10 @@ newtype Person = Person
   { age :: Int
   } deriving (Show, Generic)
 
-addAge :: Int -> StateT Person IO ()
+addAge :: Int -> State Person ()
 addAge age = #age += age
 
-subtractAge :: Int -> StateT Person IO ()
+subtractAge :: Int -> State Person ()
 subtractAge age = #age -= age
 ```
 
@@ -45,7 +44,7 @@ person :: Person
 person = Person 50
 
 main :: IO ()
-main = print <=< flip execStateT person $ do
+main = print . flip execState person $ do
   addAge 10
   subtractAge 20
   #age *= 2
