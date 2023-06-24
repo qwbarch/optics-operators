@@ -5,7 +5,7 @@ cabal-version: 1.18
 -- see: https://github.com/sol/hpack
 
 name:           optics-operators
-version:        0.1.0.0
+version:        0.1.0.1
 synopsis:       A tiny package containing operators missing from the official package.
 description:    A tiny package containing operators missing from the official package.
                 Basic example using state operators:
