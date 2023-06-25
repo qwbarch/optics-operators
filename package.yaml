@@ -23,12 +23,21 @@ description: |
   >
   > -- Output: Person {age = 30}
 
+flags:
+  build-readme:
+    description: "Build the literate haskell README example."
+    default: true
+    manual: false
+
 library:
   source-dirs:
     - src
 
 executables:
   readme:
+    when:
+      condition: "!flag(build-readme)"
+      buildable: False
     main: README.lhs
     source-dirs:
       - .
