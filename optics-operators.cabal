@@ -32,7 +32,7 @@ extra-doc-files:
 flag build-readme
   description: Build the literate haskell README example.
   manual: False
-  default: True
+  default: False
 
 library
   exposed-modules:
