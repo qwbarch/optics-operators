@@ -14,7 +14,7 @@ I've only added the operators I need for now. Feel free to open an issue or pull
 
 This is a literate haskell file. You can run this example via the following:
 ```
-nix develop --command cabal run
+nix develop --command cabal run --flags="build-readme"
 ```
 
 Necessary language extensions and imports for the example:
