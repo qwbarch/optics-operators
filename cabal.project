@@ -1,0 +1,2 @@
+packages: *.cabal
+constraints: optics-operators +build-readme

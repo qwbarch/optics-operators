@@ -11,10 +11,9 @@ let
     haskell-language-server
     markdown-unlit
   ];
-  crossPlatforms = p: with p; [ ghcjs ];
 in
 final.haskell-nix.cabalProject' {
-  inherit compiler-nix-name index-state crossPlatforms;
+  inherit compiler-nix-name index-state;
   src = ./.;
   shell = {
     inherit packages;
