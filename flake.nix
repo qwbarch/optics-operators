@@ -3,21 +3,19 @@
   inputs.nixpkgs.follows = "haskellNix/nixpkgs-unstable";
   inputs.flake-utils.url = "github:numtide/flake-utils";
   outputs = { self, nixpkgs, flake-utils, haskellNix }:
-    flake-utils.lib.eachSystem [ "x86_64-linux" ] (system:
-      let
-        packages = ps: builtins.attrValues (pkgs.haskell-nix.haskellLib.selectProjectPackages ps);
-        enableIndexing = builtins.getEnv "ENABLE_INDEXING";
-        overlays = [
-          haskellNix.overlay
-          (final: prev: { project = import ./project.nix { inherit final pkgs packages enableIndexing; }; })
-        ];
-        pkgs = import nixpkgs { inherit system overlays; inherit (haskellNix) config; };
-        flake = pkgs.project.flake { };
-      in
-      flake // {
-        defaultPackage = flake.packages."optics-operators:exe:readme";
-      });
-
+    flake-utils.lib.eachSystem [ "x86_64-linux" ]
+      (system:
+        let
+          packages = ps: builtins.attrValues (pkgs.haskell-nix.haskellLib.selectProjectPackages ps);
+          enableIndexing = builtins.getEnv "ENABLE_INDEXING";
+          overlays = [
+            haskellNix.overlay
+            (final: prev: { project = import ./project.nix { inherit final pkgs packages enableIndexing; }; })
+          ];
+          pkgs = import nixpkgs { inherit system overlays; inherit (haskellNix) config; };
+          flake = pkgs.project.flake { };
+        in
+        flake // { legacyPackages = pkgs; });
   nixConfig = {
     extra-substituters = [
       "https://cache.iog.io"
